@@ -50,7 +50,7 @@ const ArticleSchema = {
             datePublished: document.querySelector('[cc-schema-article-id="datePublished"]')?.textContent.trim(),
             dateModified: document.querySelector('[cc-schema-article-id="dateModified"]')?.textContent.trim(),
             author: {
-                '@type': 'Person',
+                '@type': document.querySelector('[cc-schema-article-id="author-type"]')?.textContent.trim() || 'Person',
                 name: document.querySelector('[cc-schema-article-id="author-name"]')?.textContent.trim(),
             },
             publisher: {
